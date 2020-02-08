@@ -79,29 +79,65 @@ function swapTexts(text1, text2, dist) {
 }
 
 function bubbleSortStep() {
-  if (unsortedArray[b] > unsortedArray[b + 1]) {
+  var length = unsortedArray.length;
+  var swap;
+  do {
+    swap = false;
+    for (let b = 0; b < unsortedArray.length; b++) {
+      // if (unsortedArray[i] > unsortedArray[i + 1]) {
+      //   var temp = unsortedArray[i];
+      //   unsortedArray[i] = unsortedArray[i + 1];
+      //   unsortedArray[i + 1] = temp;
+      //   swap = true;
+      // }
 
-    var temp = unsortedArray[b + 1];
-    unsortedArray[b + 1] = unsortedArray[b];
-    unsortedArray[b] = temp;
+      if (unsortedArray[b] > unsortedArray[b + 1]) {
 
-    swapBlocks(unsortedBlocks[b], unsortedBlocks[b + 1], blockWidth);
+        var temp = unsortedArray[b];
+        unsortedArray[b] = unsortedArray[b + 1];
+        unsortedArray[b + 1] = temp;
 
-    var temp = unsortedBlocks[b + 1];
-    unsortedBlocks[b + 1] = unsortedBlocks[b];
-    unsortedBlocks[b] = temp;
+        swapBlocks(unsortedBlocks[b], unsortedBlocks[b + 1], blockWidth);
 
-    swapTexts(unsortedText[b], unsortedText[b + 1], blockWidth);
+        var temp2 = unsortedBlocks[b];
+        unsortedBlocks[b] = unsortedBlocks[b + 1];
+        unsortedBlocks[b + 1] = temp2;
 
-    var temp = unsortedText[b + 1];
-    unsortedText[b + 1] = unsortedText[b];
-    unsortedText[b] = temp;
-  }
+        swapTexts(unsortedText[b], unsortedText[b + 1], blockWidth);
 
-  if (b < parseInt(document.getElementById('size').value) - a - 1) {
-    b++;
-  } else {
-    b = 0;
-    a++;
-  }
+        var temp3 = unsortedText[b];
+        unsortedText[b] = unsortedText[b + 1];
+        unsortedText[b + 1] = temp3;
+
+        swap = true;
+      }
+    }
+  } while(swap);
+  return unsortedArray;
+
+  // if (unsortedArray[b] > unsortedArray[b + 1]) {
+
+  //   var temp = unsortedArray[b + 1];
+  //   unsortedArray[b + 1] = unsortedArray[b];
+  //   unsortedArray[b] = temp;
+
+  //   swapBlocks(unsortedBlocks[b], unsortedBlocks[b + 1], blockWidth);
+
+  //   var temp = unsortedBlocks[b + 1];
+  //   unsortedBlocks[b + 1] = unsortedBlocks[b];
+  //   unsortedBlocks[b] = temp;
+
+  //   swapTexts(unsortedText[b], unsortedText[b + 1], blockWidth);
+
+  //   var temp = unsortedText[b + 1];
+  //   unsortedText[b + 1] = unsortedText[b];
+  //   unsortedText[b] = temp;
+  // }
+
+  // if (b < parseInt(document.getElementById('size').value) - a - 1) {
+  //   b++;
+  // } else {
+  //   b = 0;
+  //   a++;
+  // }
 }
