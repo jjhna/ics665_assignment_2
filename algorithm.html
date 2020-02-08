@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Shuffle</title>
+    <link href="css/algorithm.css" rel="stylesheet"/>
+    <link href="css/button.css" rel="stylesheet"/>
+</head>
+
+<body>
+
+<h2>Visualization of Bubble Sort Algorithm</h2>
+
+<div>
+    <label>Number of Items: </label>
+
+    <input id="size" value="10"></input>
+
+    <button id="create-blocks" class="button red" onclick="createBlocks()">Create Blocks</button>
+    <button id="sort" class="button red" onclick="bubbleSortStep()">Bubble Sort</button>
+
+</div>
+
+<hr></hr>
+
+<div id="plane"></div>
+
+<script src="js/d3-5.9.2.js"></script>
+<script src="js/d3-selection-multi.v1.min.js"></script>
+<script src="js/algorithm.js"></script>
+
+</body>
+
+</html>

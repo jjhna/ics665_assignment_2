@@ -1,0 +1,43 @@
+body {
+  font-family: Helvetica, sans-serif;
+}
+h2, div, select {
+  display: inline-block;
+  margin-right: 30px;
+  vertical-align: middle;
+}
+hr {
+  border-color: gray;
+}
+input {
+  width: 25px;
+}
+/*
+button {
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 10px;
+  background-color: i;
+}
+button:disabled {
+  background-color: lightgray;
+}
+*/
+svg {
+  display: block;
+  width: 1000px;
+  height: 1000px;
+  margin-top: 25px;
+}
+rect {
+  stroke: black;
+  stroke-width: 2px;
+  fill: lightyellow;
+}
+text {
+  font-size: 16px;
+  font-weight: bold;
+}
+.completed rect {
+  fill: lightgreen;
+}
